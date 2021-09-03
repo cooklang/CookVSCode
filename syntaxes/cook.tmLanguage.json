@@ -1,0 +1,476 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "cook",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#metadata"
+    },
+    {
+      "include": "#step"
+    }
+  ],
+  "repository": {
+    "metadata": {
+      "patterns": [
+        {
+          "match": "(^>>)$",
+          "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+        },
+        {
+          "match": "(^>>)([^:]+?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+            },
+            "2": {
+              "name": "invalid.illegal.expected-mapping-key.cook"
+            }
+          }
+        },
+        {
+          "match": "(^>>)([^:]+?)(:\\s*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.metadata.cook string.unquoted.plain.out.cook"
+            },
+            "3": {
+              "name": "invalid.illegal.expected-mapping-key.cook"
+            }
+          }
+        },
+        {
+          "match": "(^>>)([^:]+?)(:)(.*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.metadata.cook string.unquoted.plain.out.cook"
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.separator.mapping.key-value.cook"
+            },
+            "4": {
+              "name": "value.metadata.cook string.unquoted.plain.out.cook"
+            }
+          }
+        }
+      ]
+    },
+    "step": {
+      "patterns": [
+        {
+          "include": "#ingredient"
+        },
+        {
+          "include": "#equipment"
+        },
+        {
+          "include": "#timer"
+        }
+      ]
+    },
+    "ingredient": {
+      "patterns": [
+        {
+          "match": "(@)(\\()([^)]*?)(\\))",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "name": "keyword.cook.punctuation.definition.ingredient.modifier.begin.cook"
+            },
+            "3": {
+              "name": "variable.cook.constant.string.ingredient.modifier.cook"
+            },
+            "4": {
+              "name": "keyword.cook.punctuation.definition.ingredient.modifier.end.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)(\\()(.*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "name": "invalid.illegal.expected-end-of-modifier.cook"
+            },
+            "3": {
+              "name": "invalid.illegal.expected-end-of-modifier.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)(})(\\()([^)]*?)(\\))",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#ingredient_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.definition.ingredient.amount.begin.cook"
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#ingredient_amount"
+                }
+              ]
+            },
+            "5": {
+              "name": "keyword.cook.punctuation.definition.ingredient.amount.end.cook"
+            },
+            "6": {
+              "name": "keyword.cook.punctuation.definition.ingredient.modifier.begin.cook"
+            },
+            "7": {
+              "name": "variable.cook.constant.string.ingredient.modifier.cook"
+            },
+            "8": {
+              "name": "keyword.cook.punctuation.definition.ingredient.modifier.end.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)(})(\\()(.*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#ingredient_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.definition.ingredient.amount.begin.cook"
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#ingredient_amount"
+                }
+              ]
+            },
+            "5": {
+              "name": "keyword.cook.punctuation.definition.ingredient.amount.end.cook"
+            },
+            "6": {
+              "name": "invalid.illegal.expected-end-of-modifier.cook"
+            },
+            "7": {
+              "name": "invalid.illegal.expected-end-of-modifier.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)(})",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#ingredient_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.definition.ingredient.amount.begin.cook"
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#ingredient_amount"
+                }
+              ]
+            },
+            "5": {
+              "name": "keyword.cook.punctuation.definition.ingredient.amount.end.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#ingredient_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "invalid.illegal.expected-end-of-amount.cook"
+            },
+            "4": {
+              "name": "invalid.illegal.expected-end-of-amount.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)(.+?)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.css.cook.entity.name.tag.ingredient.one-word.cook"
+            }
+          }
+        },
+        {
+          "match": "(@)",
+          "name": "keyword.cook.punctuation.definition.ingredient.cook"
+        }
+      ]
+    },
+    "ingredient_word": {
+      "patterns": [
+        {
+          "match": "(\\w*?)$",
+          "name": "entity.name.tag.css.cook.entity.name.tag.ingredient.one-word.cook"
+        },
+        {
+          "match": "([^@#~]+?)$",
+          "name": "entity.name.tag.css.cook.entity.name.tag.ingredient.multi-word.cook"
+        }
+      ]
+    },
+    "ingredient_amount": {
+      "patterns": [
+        {
+          "match": "([^}%]+?(?=}|%|$))",
+          "name": "variable.cook.constant.string.ingredient.amount.cook"
+        },
+        {
+          "match": "(%)",
+          "name": "keyword.cook.punctuation.definition.ingredient.amount.separator.cook"
+        }
+      ]
+    },
+    "equipment": {
+      "patterns": [
+        {
+          "match": "(#)(\\w*?)({)[^}]*?(})",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.equipment.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.one-word.cook"
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.definition.equipment.details.begin.cook"
+            },
+            "4": {
+              "name": "keyword.cook.punctuation.definition.equipment.details.end.cook"
+            }
+          }
+        },
+        {
+          "match": "(#)(\\w*?)({)(.*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.equipment.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.one-word.cook"
+            },
+            "3": {
+              "name": "invalid.illegal.expected-end-of-details.cook"
+            },
+            "4": {
+              "name": "invalid.illegal.expected-end-of-details.cook"
+            }
+          }
+        },
+        {
+          "match": "(#)([^@#~]+?)({)[^{]*?(})",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.equipment.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.multi-word.cook"
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.definition.equipment.details.begin.cook"
+            },
+            "4": {
+              "name": "keyword.cook.punctuation.definition.equipment.details.end.cook"
+            }
+          }
+        },
+        {
+          "match": "(#)([^@#~]+?)({)(.*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.equipment.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.multi-word.cook"
+            },
+            "3": {
+              "name": "invalid.illegal.expected-end-of-details.cook"
+            },
+            "4": {
+              "name": "invalid.illegal.expected-end-of-details.cook"
+            }
+          }
+        },
+        {
+          "match": "(#)(.+?)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.equipment.cook"
+            },
+            "2": {
+              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.one-word.cook"
+            }
+          }
+        },
+        {
+          "match": "(#)",
+          "name": "keyword.cook.punctuation.definition.equipment.cook"
+        }
+      ]
+    },
+    "timer": {
+      "patterns": [
+        {
+          "match": "(~)$",
+          "name": "keyword.cook.punctuation.definition.timer.cook"
+        },
+        {
+          "match": "(~)(\\w*?|[^@#~]+?)({\\s*?})",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.timer.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#timer_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "invalid.illegal.expected-duration.cook"
+            }
+          }
+        },
+        {
+          "match": "(~)(\\w*?|[^@#~]+?)({)([^}]*?)(})",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.timer.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#timer_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "keyword.cook.punctuation.definition.timer.duration.begin.cook"
+            },
+            "4": {
+              "patterns": [
+                {
+                  "include": "#timer_duration"
+                }
+              ]
+            },
+            "5": {
+              "name": "keyword.cook.punctuation.definition.timer.duration.end.cook"
+            }
+          }
+        },
+        {
+          "match": "(~)(\\w*?|[^@#~]+?)({)(.*?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.timer.cook"
+            },
+            "2": {
+              "patterns": [
+                {
+                  "include": "#timer_word"
+                }
+              ]
+            },
+            "3": {
+              "name": "invalid.illegal.expected-end-of-duration.cook"
+            },
+            "4": {
+              "name": "invalid.illegal.expected-end-of-duration.cook"
+            }
+          }
+        },
+        {
+          "match": "(~)([^@#~]+?)$",
+          "captures": {
+            "1": {
+              "name": "keyword.cook.punctuation.definition.timer.cook"
+            },
+            "2": {
+              "name": "invalid.illegal.expected-begining-of-duration.cook"
+            }
+          }
+        }
+      ]
+    },
+    "timer_word": {
+      "patterns": [
+        {
+          "match": "(\\w+?)$",
+          "name": "entity.name.tag.css.cook.entity.name.tag.timer.one-word.cook"
+        },
+        {
+          "match": "([^@#~]+?)$",
+          "name": "entity.name.tag.css.cook.entity.name.tag.timer.multi-word.cook"
+        }
+      ]
+    },
+    "timer_duration": {
+      "patterns": [
+        {
+          "match": "([^}%]+?)",
+          "name": "variable.cook.constant.string.timer.duration.cook"
+        },
+        {
+          "match": "(%)",
+          "name": "keyword.cook.punctuation.definition.timer.duration.separator.cook"
+        }
+      ]
+    },
+    "comments": {
+      "match": "(//).*?$\\n?",
+      "name": "comment.line.double-slash.cook"
+    }
+  },
+  "scopeName": "source.cook"
+}

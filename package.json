@@ -1,0 +1,41 @@
+{
+	"name": "cook",
+	"displayName": "cook",
+	"description": "cook",
+	"version": "0.0.1",
+	"publisher": "dubadub",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "cook",
+				"aliases": [
+					"cook",
+					"cook"
+				],
+				"extensions": [
+					".cook"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cook",
+				"scopeName": "source.cook",
+				"path": "./syntaxes/cook.tmLanguage.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"js-yaml": "^4.1.0"
+	},
+	"__metadata": {
+		"installedTimestamp": 1630586468158
+	}
+}
