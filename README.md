@@ -7,7 +7,7 @@ A [Visual Studio Code](https://code.visualstudio.com) extension for the [CookLan
 
 ### Visual Studio Code
 
-Install [vsc extension](https://marketplace.visualstudio.com/items?itemName=cook).
+Install [VSC extension](https://marketplace.visualstudio.com/items?itemName=dubadub.cook).
 
 
 ## License
