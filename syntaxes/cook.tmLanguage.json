@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "cook",
+  "scopeName": "source.cook",
   "patterns": [
     {
       "include": "#comments"
@@ -468,9 +469,51 @@
       ]
     },
     "comments": {
-      "match": "(//).*?$\\n?",
-      "name": "comment.line.double-slash.cook"
+      "patterns": [
+        {
+					"name": "comment.block.cook",
+					"begin": "(\\[-)(?:\\s*((@)internal)(?=\\s|(-])))?",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.cook"
+						},
+						"2": {
+							"name": "storage.type.internaldeclaration.cook"
+						},
+						"3": {
+							"name": "punctuation.decorator.internaldeclaration.cook"
+						}
+					},
+					"end": "-]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.cook"
+						}
+					}
+				},
+        {
+          "begin": "(^[ \\t]+)?((--)(?:\\s*((@)internal)(?=\\s|$))?)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.cook"
+            },
+            "2": {
+              "name": "comment.line.double-dash.cook"
+            },
+            "3": {
+              "name": "punctuation.definition.comment.cook"
+            },
+            "4": {
+              "name": "storage.type.internaldeclaration.cook"
+            },
+            "5": {
+              "name": "punctuation.decorator.internaldeclaration.cook"
+            }
+          },
+          "end": "(?=$)",
+          "contentName": "comment.line.double-dash.cook"
+        }
+      ]
     }
-  },
-  "scopeName": "source.cook"
+  }
 }

@@ -2,8 +2,10 @@
 	"name": "cook",
 	"displayName": "cook",
 	"description": "cook",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "dubadub",
+	"repository": "https://github.com/cooklang/CookVSCode",
+	"icon": "cooklang.png",
 	"engines": {
 		"vscode": "^1.50.0"
 	},
@@ -32,10 +34,10 @@
 			}
 		]
 	},
-	"devDependencies": {
-		"js-yaml": "^4.1.0"
-	},
 	"__metadata": {
-		"installedTimestamp": 1630586468158
+		"installedTimestamp": 1630586468158,
+		"id": "3df6b198-3256-4d79-8344-3b498d766939",
+		"publisherDisplayName": "Alexey Dubovskoy",
+		"publisherId": "3fc161c3-05ad-4d28-bedd-2a525edf0161"
 	}
 }
