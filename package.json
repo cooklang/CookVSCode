@@ -5,6 +5,7 @@
 	"version": "0.0.2",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
+	"icon": "cooklang.png",
 	"engines": {
 		"vscode": "^1.50.0"
 	},
