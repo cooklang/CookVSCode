@@ -1,6 +1,9 @@
 # Change Log
 
 ## v0.0.2
+- Enable word wrap by default
+
+## v0.0.2
 - Changed comments syntax from `//` to `--`
 - Introduced blocked comments `[- TODO ... -]`
 
