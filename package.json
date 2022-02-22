@@ -1,8 +1,8 @@
 {
-	"name": "cook",
-	"displayName": "cook",
-	"description": "cook",
-	"version": "0.0.3",
+	"name": "Cooklang",
+	"displayName": "cooklang",
+	"description": "Cooklang syntax",
+	"version": "0.0.4",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
@@ -24,7 +24,7 @@
 				"id": "cook",
 				"aliases": [
 					"cook",
-					"cook"
+					"cooklang"
 				],
 				"extensions": [
 					".cook"
