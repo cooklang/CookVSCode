@@ -36,7 +36,10 @@
 			{
 				"language": "cook",
 				"scopeName": "source.cook",
-				"path": "./syntaxes/cook.tmLanguage.json"
+				"path": "./syntaxes/cook.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.frontmatter": "yaml"
+				}
 			}
 		]
 	},
