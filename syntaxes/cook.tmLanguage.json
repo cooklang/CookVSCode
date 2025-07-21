@@ -4,16 +4,51 @@
   "scopeName": "source.cook",
   "patterns": [
     {
+      "include": "#frontmatter"
+    },
+    {
       "include": "#comments"
     },
     {
       "include": "#metadata"
     },
     {
+      "include": "#section"
+    },
+    {
+      "include": "#recipe_note"
+    },
+    {
       "include": "#step"
     }
   ],
   "repository": {
+    "frontmatter": {
+      "patterns": [
+        {
+          "match": "\\A(---)$",
+          "name": "punctuation.definition.frontmatter.begin.cook",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.frontmatter.begin.cook"
+            }
+          },
+          "begin": "\\A(---)$",
+          "end": "^(---)$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.frontmatter.end.cook"
+            }
+          },
+          "contentName": "markup.raw.yaml.frontmatter.cook",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        }
+      ]
+    },
     "metadata": {
       "patterns": [
         {
@@ -89,7 +124,7 @@
               "name": "keyword.cook.punctuation.definition.ingredient.modifier.begin.cook"
             },
             "3": {
-              "name": "variable.cook.constant.string.ingredient.modifier.cook"
+              "name": "entity.name.type.ingredient.modifier.cook"
             },
             "4": {
               "name": "keyword.cook.punctuation.definition.ingredient.modifier.end.cook"
@@ -140,7 +175,7 @@
               "name": "keyword.cook.punctuation.definition.ingredient.modifier.begin.cook"
             },
             "7": {
-              "name": "variable.cook.constant.string.ingredient.modifier.cook"
+              "name": "entity.name.type.ingredient.modifier.cook"
             },
             "8": {
               "name": "keyword.cook.punctuation.definition.ingredient.modifier.end.cook"
@@ -262,12 +297,24 @@
     "ingredient_amount": {
       "patterns": [
         {
+          "match": "(\\d+)",
+          "name": "meta.number.integer.decimal.cook constant.numeric.value.cook"
+        },
+        {
           "match": "([^}%]+?(?=}|%|$))",
-          "name": "variable.cook.constant.string.ingredient.amount.cook"
+          "name": "constant.string.ingredient.amount.cook"
         },
         {
           "match": "(%)",
           "name": "keyword.cook.punctuation.definition.ingredient.amount.separator.cook"
+        },
+        {
+          "match": "(\\|)",
+          "name": "punctuation.separator.sequence.cook"
+        },
+        {
+          "match": "([/*])",
+          "name": "keyword.operator.arithmetic.cook"
         }
       ]
     },
@@ -459,8 +506,12 @@
     "timer_duration": {
       "patterns": [
         {
+          "match": "(\\d+)",
+          "name": "meta.number.integer.decimal.cook constant.numeric.value.cook"
+        },
+        {
           "match": "([^}%]+?)",
-          "name": "variable.cook.constant.string.timer.duration.cook"
+          "name": "constant.string.timer.duration.cook"
         },
         {
           "match": "(%)",
@@ -468,8 +519,58 @@
         }
       ]
     },
+    "section": {
+      "patterns": [
+        {
+          "match": "^(={1,})([^=]+)(={1,})?$",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.heading.begin.cook"
+            },
+            "2": {
+              "name": "entity.name.section.cook markup.heading.cook"
+            },
+            "3": {
+              "name": "punctuation.definition.heading.end.cook"
+            }
+          }
+        }
+      ]
+    },
+    "recipe_note": {
+      "patterns": [
+        {
+          "begin": "^>",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.note.cook"
+            }
+          },
+          "end": "$\\n?",
+          "contentName": "comment.block.documentation.cook",
+          "patterns": [
+            {
+              "match": ".+",
+              "name": "string.quoted.other.cook"
+            }
+          ]
+        }
+      ]
+    },
     "comments": {
       "patterns": [
+        {
+          "match": "(?<!-)--(?!-)",
+          "name": "punctuation.definition.comment.cook",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.cook"
+            }
+          },
+          "begin": "(?<!-)--(?!-)",
+          "end": "$\\n?",
+          "contentName": "comment.line.double-dash.cook"
+        },
         {
 					"name": "comment.block.cook",
 					"begin": "(\\[-)(?:\\s*((@)internal)(?=\\s|(-])))?",
@@ -490,29 +591,7 @@
 							"name": "punctuation.definition.comment.cook"
 						}
 					}
-				},
-        {
-          "begin": "(^[ \\t]+)?((--)(?:\\s*((@)internal)(?=\\s|$))?)",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.whitespace.comment.leading.cook"
-            },
-            "2": {
-              "name": "comment.line.double-dash.cook"
-            },
-            "3": {
-              "name": "punctuation.definition.comment.cook"
-            },
-            "4": {
-              "name": "storage.type.internaldeclaration.cook"
-            },
-            "5": {
-              "name": "punctuation.decorator.internaldeclaration.cook"
-            }
-          },
-          "end": "(?=$)",
-          "contentName": "comment.line.double-dash.cook"
-        }
+				}
       ]
     }
   }

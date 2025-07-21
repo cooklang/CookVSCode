@@ -1,0 +1,84 @@
+---
+title: Comprehensive Syntax Test
+servings: 6
+time: 45 minutes
+---
+
+>> source: https://example.com/recipes
+>> author: Test Chef
+>> tags: test, syntax-highlighting
+>>
+>> invalid-line
+>> key:
+
+= Basic Ingredients =
+
+-- Single line comment
+[- Multi-line 
+   block comment -]
+[- Nested [- comment -] test -]
+
+Simple: @salt and @pepper
+With amounts: @flour{2%cups} @water{1.5%liters}
+With modifiers: @onions(diced) @garlic(minced)
+Complex: @potatoes{500%g}(peeled and diced)
+
+Edge cases:
+@@ (double at sign)
+@ingredient with spaces{100%g}
+@multi word ingredient{2%tbsp}(chopped)
+@ingredient{} (empty amount)
+@ingredient{%} (only percentage)
+@ingredient{1/2%cup|250%ml} (alternatives)
+@ingredient{2*3%pieces} (arithmetic)
+
+== Equipment Section ==
+
+Basic: #pan #knife #bowl
+With details: #oven{180%°C} #pot{large}
+Multi-word: #wooden spoon #cutting board{}
+Edge: ## (double hash)
+
+=== Timers ===
+
+Basic timer: ~{10%minutes}
+Named timer: ~cooking time{30%min}
+Timer variations: ~rest{1%hour} ~bake{45-50%minutes}
+Edge: ~~ (double tilde)
+~timer without duration
+~{} (empty timer)
+
+==== Recipe Notes ====
+
+> This is a recipe note
+> Another note line
+>
+>> This looks like metadata but it's not at the start
+
+===== Complex Step =====
+
+Mix @flour{2%cups} with @water{300%ml} in #bowl using #whisk for ~{5%minutes}.
+
+-- Comments can appear anywhere
+Add @sugar{100%g}(granulated) -- inline comment test
+[- Block comments
+   can span multiple lines
+   and include @ingredients #equipment ~{timers}
+-]
+
+====== Error Cases ======
+
+@incomplete{
+@unclosed modifier(
+#equipment{unclosed
+~timer{unclosed duration
+
+Missing colons in metadata:
+>> key without value
+>> key with empty value:
+
+Invalid frontmatter:
+--- (should only work at start)
+
+Nested structures:
+Cook @vegetables{@amount} in #pan{#size} for ~time{~duration}

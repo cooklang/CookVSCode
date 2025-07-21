@@ -2,7 +2,7 @@
 	"name": "Cooklang",
 	"displayName": "cooklang",
 	"description": "Cooklang syntax",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
