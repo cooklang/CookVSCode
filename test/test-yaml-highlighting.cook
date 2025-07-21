@@ -1,0 +1,52 @@
+---
+title: Test Recipe with YAML
+servings: 4
+prep_time: 10
+cook_time: 20
+tags:
+  - vegetarian
+  - quick
+  - healthy
+ingredients:
+  vegetables:
+    - name: carrots
+      amount: 2
+    - name: onions
+      amount: 1
+  spices:
+    - cumin: "1 tsp"
+    - paprika: "1/2 tsp"
+nested:
+  deeply:
+    nested:
+      value: true
+# This is a YAML comment
+multiline: |
+  This is a multiline
+  string in YAML
+another_multiline: >
+  This is another multiline
+  string that will be folded
+---
+
+>> source: https://example.com
+>> author: Test Chef
+
+= Preparation =
+
+Dice @onions{1} and @carrots{2} into small pieces.
+
+Heat #pan over medium heat for ~{2%minutes}.
+
+Add @olive oil{2%tbsp} and sauté the vegetables.
+
+-- This is a regular comment in the recipe
+[- This is a block comment -]
+
+= Cooking =
+
+Add @cumin{1%tsp} and @paprika{1/2%tsp} to the pan.
+
+Cook for ~{20%minutes} until tender.
+
+> This is a recipe note

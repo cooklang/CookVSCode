@@ -26,26 +26,19 @@
     "frontmatter": {
       "patterns": [
         {
-          "match": "\\A(---)$",
-          "name": "punctuation.definition.frontmatter.begin.cook",
+          "begin": "\\A-{3}\\s*$",
           "beginCaptures": {
-            "1": {
+            "0": {
               "name": "punctuation.definition.frontmatter.begin.cook"
             }
           },
-          "begin": "\\A(---)$",
-          "end": "^(---)$",
-          "endCaptures": {
-            "1": {
-              "name": "punctuation.definition.frontmatter.end.cook"
-            }
-          },
-          "contentName": "markup.raw.yaml.frontmatter.cook",
+          "contentName": "meta.embedded.block.frontmatter",
           "patterns": [
             {
               "include": "source.yaml"
             }
-          ]
+          ],
+          "while": "^(?!(-{3}|\\.{3})\\s*$)"
         }
       ]
     },
