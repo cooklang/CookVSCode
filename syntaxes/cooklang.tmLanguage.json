@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "cook",
-  "scopeName": "source.cook",
+  "name": "Cooklang",
+  "scopeName": "source.cooklang",
   "patterns": [
     {
       "include": "#frontmatter"
@@ -29,7 +29,7 @@
           "begin": "\\A-{3}\\s*$",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.frontmatter.begin.cook"
+              "name": "punctuation.definition.frontmatter.begin.cooklang"
             }
           },
           "contentName": "meta.embedded.block.frontmatter",
@@ -46,16 +46,16 @@
       "patterns": [
         {
           "match": "(^>>)$",
-          "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+          "name": "keyword.cooklang.punctuation.section.mapping.begin.cooklang"
         },
         {
           "match": "(^>>)([^:]+?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+              "name": "keyword.cooklang.punctuation.section.mapping.begin.cooklang"
             },
             "2": {
-              "name": "invalid.illegal.expected-mapping-key.cook"
+              "name": "invalid.illegal.expected-mapping-key.cooklang"
             }
           }
         },
@@ -63,13 +63,13 @@
           "match": "(^>>)([^:]+?)(:\\s*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+              "name": "keyword.cooklang.punctuation.section.mapping.begin.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.metadata.cook string.unquoted.plain.out.cook"
+              "name": "entity.name.tag.metadata.cooklang string.unquoted.plain.out.cooklang"
             },
             "3": {
-              "name": "invalid.illegal.expected-mapping-key.cook"
+              "name": "invalid.illegal.expected-mapping-key.cooklang"
             }
           }
         },
@@ -77,16 +77,16 @@
           "match": "(^>>)([^:]+?)(:)(.*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.section.mapping.begin.cook"
+              "name": "keyword.cooklang.punctuation.section.mapping.begin.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.metadata.cook string.unquoted.plain.out.cook"
+              "name": "entity.name.tag.metadata.cooklang string.unquoted.plain.out.cooklang"
             },
             "3": {
-              "name": "keyword.cook.punctuation.separator.mapping.key-value.cook"
+              "name": "keyword.cooklang.punctuation.separator.mapping.key-value.cooklang"
             },
             "4": {
-              "name": "value.metadata.cook string.unquoted.plain.out.cook"
+              "name": "value.metadata.cooklang string.unquoted.plain.out.cooklang"
             }
           }
         }
@@ -111,16 +111,16 @@
           "match": "(@)(\\()([^)]*?)(\\))",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
-              "name": "keyword.cook.punctuation.definition.ingredient.modifier.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.modifier.begin.cooklang"
             },
             "3": {
-              "name": "entity.name.type.ingredient.modifier.cook"
+              "name": "entity.name.type.ingredient.modifier.cooklang"
             },
             "4": {
-              "name": "keyword.cook.punctuation.definition.ingredient.modifier.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.modifier.end.cooklang"
             }
           }
         },
@@ -128,13 +128,13 @@
           "match": "(@)(\\()(.*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
-              "name": "invalid.illegal.expected-end-of-modifier.cook"
+              "name": "invalid.illegal.expected-end-of-modifier.cooklang"
             },
             "3": {
-              "name": "invalid.illegal.expected-end-of-modifier.cook"
+              "name": "invalid.illegal.expected-end-of-modifier.cooklang"
             }
           }
         },
@@ -142,7 +142,7 @@
           "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)(})(\\()([^)]*?)(\\))",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
               "patterns": [
@@ -152,7 +152,7 @@
               ]
             },
             "3": {
-              "name": "keyword.cook.punctuation.definition.ingredient.amount.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.amount.begin.cooklang"
             },
             "4": {
               "patterns": [
@@ -162,16 +162,16 @@
               ]
             },
             "5": {
-              "name": "keyword.cook.punctuation.definition.ingredient.amount.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.amount.end.cooklang"
             },
             "6": {
-              "name": "keyword.cook.punctuation.definition.ingredient.modifier.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.modifier.begin.cooklang"
             },
             "7": {
-              "name": "entity.name.type.ingredient.modifier.cook"
+              "name": "entity.name.type.ingredient.modifier.cooklang"
             },
             "8": {
-              "name": "keyword.cook.punctuation.definition.ingredient.modifier.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.modifier.end.cooklang"
             }
           }
         },
@@ -179,7 +179,7 @@
           "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)(})(\\()(.*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
               "patterns": [
@@ -189,7 +189,7 @@
               ]
             },
             "3": {
-              "name": "keyword.cook.punctuation.definition.ingredient.amount.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.amount.begin.cooklang"
             },
             "4": {
               "patterns": [
@@ -199,13 +199,13 @@
               ]
             },
             "5": {
-              "name": "keyword.cook.punctuation.definition.ingredient.amount.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.amount.end.cooklang"
             },
             "6": {
-              "name": "invalid.illegal.expected-end-of-modifier.cook"
+              "name": "invalid.illegal.expected-end-of-modifier.cooklang"
             },
             "7": {
-              "name": "invalid.illegal.expected-end-of-modifier.cook"
+              "name": "invalid.illegal.expected-end-of-modifier.cooklang"
             }
           }
         },
@@ -213,7 +213,7 @@
           "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)(})",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
               "patterns": [
@@ -223,7 +223,7 @@
               ]
             },
             "3": {
-              "name": "keyword.cook.punctuation.definition.ingredient.amount.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.amount.begin.cooklang"
             },
             "4": {
               "patterns": [
@@ -233,7 +233,7 @@
               ]
             },
             "5": {
-              "name": "keyword.cook.punctuation.definition.ingredient.amount.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.amount.end.cooklang"
             }
           }
         },
@@ -241,7 +241,7 @@
           "match": "(@)(\\w*?|[^@#~]+?)({)([^}]*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
               "patterns": [
@@ -251,10 +251,10 @@
               ]
             },
             "3": {
-              "name": "invalid.illegal.expected-end-of-amount.cook"
+              "name": "invalid.illegal.expected-end-of-amount.cooklang"
             },
             "4": {
-              "name": "invalid.illegal.expected-end-of-amount.cook"
+              "name": "invalid.illegal.expected-end-of-amount.cooklang"
             }
           }
         },
@@ -262,16 +262,16 @@
           "match": "(@)(.+?)\\b",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.ingredient.cook"
+              "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.css.cook.entity.name.tag.ingredient.one-word.cook"
+              "name": "entity.name.tag.css.cooklang.entity.name.tag.ingredient.one-word.cooklang"
             }
           }
         },
         {
           "match": "(@)",
-          "name": "keyword.cook.punctuation.definition.ingredient.cook"
+          "name": "keyword.cooklang.punctuation.definition.ingredient.cooklang"
         }
       ]
     },
@@ -279,11 +279,11 @@
       "patterns": [
         {
           "match": "(\\w*?)$",
-          "name": "entity.name.tag.css.cook.entity.name.tag.ingredient.one-word.cook"
+          "name": "entity.name.tag.css.cooklang.entity.name.tag.ingredient.one-word.cooklang"
         },
         {
           "match": "([^@#~]+?)$",
-          "name": "entity.name.tag.css.cook.entity.name.tag.ingredient.multi-word.cook"
+          "name": "entity.name.tag.css.cooklang.entity.name.tag.ingredient.multi-word.cooklang"
         }
       ]
     },
@@ -291,23 +291,23 @@
       "patterns": [
         {
           "match": "(\\d+)",
-          "name": "meta.number.integer.decimal.cook constant.numeric.value.cook"
+          "name": "meta.number.integer.decimal.cooklang constant.numeric.value.cooklang"
         },
         {
           "match": "([^}%]+?(?=}|%|$))",
-          "name": "constant.string.ingredient.amount.cook"
+          "name": "constant.string.ingredient.amount.cooklang"
         },
         {
           "match": "(%)",
-          "name": "keyword.cook.punctuation.definition.ingredient.amount.separator.cook"
+          "name": "keyword.cooklang.punctuation.definition.ingredient.amount.separator.cooklang"
         },
         {
           "match": "(\\|)",
-          "name": "punctuation.separator.sequence.cook"
+          "name": "punctuation.separator.sequence.cooklang"
         },
         {
           "match": "([/*])",
-          "name": "keyword.operator.arithmetic.cook"
+          "name": "keyword.operator.arithmetic.cooklang"
         }
       ]
     },
@@ -317,16 +317,16 @@
           "match": "(#)(\\w*?)({)[^}]*?(})",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.equipment.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.one-word.cook"
+              "name": "entity.name.tag.css.cooklang.entity.name.tag.equipment.one-word.cooklang"
             },
             "3": {
-              "name": "keyword.cook.punctuation.definition.equipment.details.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.details.begin.cooklang"
             },
             "4": {
-              "name": "keyword.cook.punctuation.definition.equipment.details.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.details.end.cooklang"
             }
           }
         },
@@ -334,16 +334,16 @@
           "match": "(#)(\\w*?)({)(.*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.equipment.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.one-word.cook"
+              "name": "entity.name.tag.css.cooklang.entity.name.tag.equipment.one-word.cooklang"
             },
             "3": {
-              "name": "invalid.illegal.expected-end-of-details.cook"
+              "name": "invalid.illegal.expected-end-of-details.cooklang"
             },
             "4": {
-              "name": "invalid.illegal.expected-end-of-details.cook"
+              "name": "invalid.illegal.expected-end-of-details.cooklang"
             }
           }
         },
@@ -351,16 +351,16 @@
           "match": "(#)([^@#~]+?)({)[^{]*?(})",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.equipment.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.multi-word.cook"
+              "name": "entity.name.tag.css.cooklang.entity.name.tag.equipment.multi-word.cooklang"
             },
             "3": {
-              "name": "keyword.cook.punctuation.definition.equipment.details.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.details.begin.cooklang"
             },
             "4": {
-              "name": "keyword.cook.punctuation.definition.equipment.details.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.details.end.cooklang"
             }
           }
         },
@@ -368,16 +368,16 @@
           "match": "(#)([^@#~]+?)({)(.*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.equipment.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.multi-word.cook"
+              "name": "entity.name.tag.css.cooklang.entity.name.tag.equipment.multi-word.cooklang"
             },
             "3": {
-              "name": "invalid.illegal.expected-end-of-details.cook"
+              "name": "invalid.illegal.expected-end-of-details.cooklang"
             },
             "4": {
-              "name": "invalid.illegal.expected-end-of-details.cook"
+              "name": "invalid.illegal.expected-end-of-details.cooklang"
             }
           }
         },
@@ -385,16 +385,16 @@
           "match": "(#)(.+?)\\b",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.equipment.cook"
+              "name": "keyword.cooklang.punctuation.definition.equipment.cooklang"
             },
             "2": {
-              "name": "entity.name.tag.css.cook.entity.name.tag.equipment.one-word.cook"
+              "name": "entity.name.tag.css.cooklang.entity.name.tag.equipment.one-word.cooklang"
             }
           }
         },
         {
           "match": "(#)",
-          "name": "keyword.cook.punctuation.definition.equipment.cook"
+          "name": "keyword.cooklang.punctuation.definition.equipment.cooklang"
         }
       ]
     },
@@ -402,13 +402,13 @@
       "patterns": [
         {
           "match": "(~)$",
-          "name": "keyword.cook.punctuation.definition.timer.cook"
+          "name": "keyword.cooklang.punctuation.definition.timer.cooklang"
         },
         {
           "match": "(~)(\\w*?|[^@#~]+?)({\\s*?})",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.timer.cook"
+              "name": "keyword.cooklang.punctuation.definition.timer.cooklang"
             },
             "2": {
               "patterns": [
@@ -418,7 +418,7 @@
               ]
             },
             "3": {
-              "name": "invalid.illegal.expected-duration.cook"
+              "name": "invalid.illegal.expected-duration.cooklang"
             }
           }
         },
@@ -426,7 +426,7 @@
           "match": "(~)(\\w*?|[^@#~]+?)({)([^}]*?)(})",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.timer.cook"
+              "name": "keyword.cooklang.punctuation.definition.timer.cooklang"
             },
             "2": {
               "patterns": [
@@ -436,7 +436,7 @@
               ]
             },
             "3": {
-              "name": "keyword.cook.punctuation.definition.timer.duration.begin.cook"
+              "name": "keyword.cooklang.punctuation.definition.timer.duration.begin.cooklang"
             },
             "4": {
               "patterns": [
@@ -446,7 +446,7 @@
               ]
             },
             "5": {
-              "name": "keyword.cook.punctuation.definition.timer.duration.end.cook"
+              "name": "keyword.cooklang.punctuation.definition.timer.duration.end.cooklang"
             }
           }
         },
@@ -454,7 +454,7 @@
           "match": "(~)(\\w*?|[^@#~]+?)({)(.*?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.timer.cook"
+              "name": "keyword.cooklang.punctuation.definition.timer.cooklang"
             },
             "2": {
               "patterns": [
@@ -464,10 +464,10 @@
               ]
             },
             "3": {
-              "name": "invalid.illegal.expected-end-of-duration.cook"
+              "name": "invalid.illegal.expected-end-of-duration.cooklang"
             },
             "4": {
-              "name": "invalid.illegal.expected-end-of-duration.cook"
+              "name": "invalid.illegal.expected-end-of-duration.cooklang"
             }
           }
         },
@@ -475,10 +475,10 @@
           "match": "(~)([^@#~]+?)$",
           "captures": {
             "1": {
-              "name": "keyword.cook.punctuation.definition.timer.cook"
+              "name": "keyword.cooklang.punctuation.definition.timer.cooklang"
             },
             "2": {
-              "name": "invalid.illegal.expected-begining-of-duration.cook"
+              "name": "invalid.illegal.expected-begining-of-duration.cooklang"
             }
           }
         }
@@ -488,11 +488,11 @@
       "patterns": [
         {
           "match": "(\\w+?)$",
-          "name": "entity.name.tag.css.cook.entity.name.tag.timer.one-word.cook"
+          "name": "entity.name.tag.css.cooklang.entity.name.tag.timer.one-word.cooklang"
         },
         {
           "match": "([^@#~]+?)$",
-          "name": "entity.name.tag.css.cook.entity.name.tag.timer.multi-word.cook"
+          "name": "entity.name.tag.css.cooklang.entity.name.tag.timer.multi-word.cooklang"
         }
       ]
     },
@@ -500,15 +500,15 @@
       "patterns": [
         {
           "match": "(\\d+)",
-          "name": "meta.number.integer.decimal.cook constant.numeric.value.cook"
+          "name": "meta.number.integer.decimal.cooklang constant.numeric.value.cooklang"
         },
         {
           "match": "([^}%]+?)",
-          "name": "constant.string.timer.duration.cook"
+          "name": "constant.string.timer.duration.cooklang"
         },
         {
           "match": "(%)",
-          "name": "keyword.cook.punctuation.definition.timer.duration.separator.cook"
+          "name": "keyword.cooklang.punctuation.definition.timer.duration.separator.cooklang"
         }
       ]
     },
@@ -518,13 +518,13 @@
           "match": "^(={1,})([^=]+)(={1,})?$",
           "captures": {
             "1": {
-              "name": "punctuation.definition.heading.begin.cook"
+              "name": "punctuation.definition.heading.begin.cooklang"
             },
             "2": {
-              "name": "entity.name.section.cook markup.heading.cook"
+              "name": "entity.name.section.cooklang markup.heading.cooklang"
             },
             "3": {
-              "name": "punctuation.definition.heading.end.cook"
+              "name": "punctuation.definition.heading.end.cooklang"
             }
           }
         }
@@ -536,15 +536,15 @@
           "begin": "^>",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.note.cook"
+              "name": "punctuation.definition.note.cooklang"
             }
           },
           "end": "$\\n?",
-          "contentName": "comment.block.documentation.cook",
+          "contentName": "comment.block.documentation.cooklang",
           "patterns": [
             {
               "match": ".+",
-              "name": "string.quoted.other.cook"
+              "name": "string.quoted.other.cooklang"
             }
           ]
         }
@@ -554,34 +554,34 @@
       "patterns": [
         {
           "match": "(?<!-)--(?!-)",
-          "name": "punctuation.definition.comment.cook",
+          "name": "punctuation.definition.comment.cooklang",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.comment.cook"
+              "name": "punctuation.definition.comment.cooklang"
             }
           },
           "begin": "(?<!-)--(?!-)",
           "end": "$\\n?",
-          "contentName": "comment.line.double-dash.cook"
+          "contentName": "comment.line.double-dash.cooklang"
         },
         {
-					"name": "comment.block.cook",
+					"name": "comment.block.cooklang",
 					"begin": "(\\[-)(?:\\s*((@)internal)(?=\\s|(-])))?",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.definition.comment.cook"
+							"name": "punctuation.definition.comment.cooklang"
 						},
 						"2": {
-							"name": "storage.type.internaldeclaration.cook"
+							"name": "storage.type.internaldeclaration.cooklang"
 						},
 						"3": {
-							"name": "punctuation.decorator.internaldeclaration.cook"
+							"name": "punctuation.decorator.internaldeclaration.cooklang"
 						}
 					},
 					"end": "-]",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.definition.comment.cook"
+							"name": "punctuation.definition.comment.cooklang"
 						}
 					}
 				}

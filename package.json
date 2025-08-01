@@ -2,7 +2,7 @@
 	"name": "cook",
 	"displayName": "Cooklang Syntax",
 	"description": "Cooklang syntax",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
@@ -14,16 +14,16 @@
 	],
 	"contributes": {
 		"configurationDefaults": {
-			"[cook]": {
+			"[cooklang]": {
 				"editor.wordWrap": "on",
 				"editor.quickSuggestions": false
 			}
 		},
 		"languages": [
 			{
-				"id": "cook",
+				"id": "cooklang",
 				"aliases": [
-					"cook",
+					"Cooklang",
 					"cooklang"
 				],
 				"extensions": [
@@ -34,9 +34,9 @@
 		],
 		"grammars": [
 			{
-				"language": "cook",
-				"scopeName": "source.cook",
-				"path": "./syntaxes/cook.tmLanguage.json",
+				"language": "cooklang",
+				"scopeName": "source.cooklang",
+				"path": "./syntaxes/cooklang.tmLanguage.json",
 				"embeddedLanguages": {
 					"meta.embedded.block.yaml": "yaml"
 				}

@@ -1,6 +1,6 @@
-# CookLang Syntax
+# Cooklang Syntax
 
-A [Visual Studio Code](https://code.visualstudio.com) extension for the [CookLang markup language](https://cooklang.org)
+A [Visual Studio Code](https://code.visualstudio.com) extension for the [Cooklang markup language](https://cooklang.org)
 
 
 ## Installation

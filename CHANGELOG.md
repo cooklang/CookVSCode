@@ -1,5 +1,11 @@
 # Change Log
 
+## v0.2.1
+- Renamed language to Cooklang
+
+## v0.2.0
+- Updated syntax to include latest language features like sections, YAML frontmatter, etc
+
 ## v0.0.2
 - Enable word wrap by default
 
