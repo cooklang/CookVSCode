@@ -27,7 +27,8 @@
 					"cooklang"
 				],
 				"extensions": [
-					".cook"
+					".cook",
+					".menu"
 				],
 				"configuration": "./language-configuration.json"
 			}
