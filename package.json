@@ -2,7 +2,7 @@
 	"name": "cook",
 	"displayName": "Cooklang",
 	"description": "Language support for Cooklang recipe files",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
@@ -15,7 +15,7 @@
 	"activationEvents": [
 		"onLanguage:cooklang"
 	],
-	"main": "./out/extension.js",
+	"main": "./dist/extension.js",
 	"contributes": {
 		"configurationDefaults": {
 			"[cooklang]": {
@@ -76,7 +76,10 @@
 		"publisherId": "3fc161c3-05ad-4d28-bedd-2a525edf0161"
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
+		"vscode:prepublish": "npm run esbuild-base -- --minify",
+		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+		"esbuild": "npm run esbuild-base -- --sourcemap",
+		"esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"package": "vsce package"
@@ -87,6 +90,7 @@
 	"devDependencies": {
 		"@types/node": "^20.0.0",
 		"@types/vscode": "^1.75.0",
+		"esbuild": "^0.27.2",
 		"typescript": "^5.0.0",
 		"vsce": "^2.15.0"
 	}
