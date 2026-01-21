@@ -1,22 +1,47 @@
 {
 	"name": "cook",
-	"displayName": "Cooklang Syntax",
-	"description": "Cooklang syntax",
-	"version": "0.2.2",
+	"displayName": "Cooklang",
+	"description": "Language support for Cooklang recipe files",
+	"version": "0.4.0",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
 	"engines": {
-		"vscode": "^1.50.0"
+		"vscode": "^1.75.0"
 	},
 	"categories": [
 		"Programming Languages"
 	],
+	"activationEvents": [
+		"onLanguage:cooklang"
+	],
+	"main": "./out/extension.js",
 	"contributes": {
 		"configurationDefaults": {
 			"[cooklang]": {
 				"editor.wordWrap": "on",
-				"editor.quickSuggestions": false
+				"editor.quickSuggestions": true
+			}
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Cooklang",
+			"properties": {
+				"cooklang.serverPath": {
+					"type": "string",
+					"default": "cook",
+					"description": "Path to the cook executable. Defaults to 'cook' in PATH."
+				},
+				"cooklang.trace.server": {
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between VS Code and the language server."
+				}
 			}
 		},
 		"languages": [
@@ -50,7 +75,19 @@
 		"publisherDisplayName": "Alexey Dubovskoy",
 		"publisherId": "3fc161c3-05ad-4d28-bedd-2a525edf0161"
 	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^9.0.1"
+	},
 	"devDependencies": {
-		"vsce": "^2.5.1"
+		"@types/node": "^20.0.0",
+		"@types/vscode": "^1.75.0",
+		"typescript": "^5.0.0",
+		"vsce": "^2.15.0"
 	}
 }

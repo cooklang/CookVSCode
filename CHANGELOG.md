@@ -1,5 +1,15 @@
 # Change Log
 
+## v0.4.0
+- Added Language Server Protocol (LSP) support via `cook` CLI
+- Auto-completion for ingredients, cookware, units
+- Real-time diagnostics and syntax checking
+- Hover information for ingredients
+- Document outline support
+
+## v0.3.0
+- Added support for `.menu` files
+
 ## v0.2.1
 - Renamed language to Cooklang
 

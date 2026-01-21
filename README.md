@@ -1,13 +1,38 @@
-# Cooklang Syntax
+# Cooklang
 
-A [Visual Studio Code](https://code.visualstudio.com) extension for the [Cooklang markup language](https://cooklang.org)
+A [Visual Studio Code](https://code.visualstudio.com) extension for the [Cooklang markup language](https://cooklang.org), providing syntax highlighting and language server features.
 
+## Features
+
+- **Syntax Highlighting** - Colorization for ingredients, cookware, timers, and more
+- **Auto-completion** - Smart suggestions for ingredients, cookware, units, and time units
+- **Diagnostics** - Real-time syntax checking and error reporting
+- **Hover Information** - View ingredient details and quantities
+- **Document Outline** - Navigate recipe structure
+
+## Requirements
+
+This extension requires the [`cook`](https://github.com/cooklang/cookcli) CLI tool to be installed for language server features.
+
+Install `cook` and ensure it's available in your PATH.
 
 ## Installation
 
 ### Visual Studio Code
 
-Install [VSC extension](https://marketplace.visualstudio.com/items?itemName=dubadub.cook).
+Install the [Cooklang extension](https://marketplace.visualstudio.com/items?itemName=dubadub.cook) from the marketplace.
+
+## Configuration
+
+You can customize the path to the `cook` executable in VS Code settings:
+
+```json
+{
+  "cooklang.serverPath": "cook"
+}
+```
+
+If `cook` is not in your PATH, provide the full path to the executable.
 
 
 ## License
