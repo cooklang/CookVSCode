@@ -2,7 +2,7 @@
 	"name": "cook",
 	"displayName": "Cooklang",
 	"description": "Language support for Cooklang recipe files",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"publisher": "dubadub",
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
