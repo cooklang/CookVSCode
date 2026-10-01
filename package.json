@@ -7,7 +7,7 @@
 	"repository": "https://github.com/cooklang/CookVSCode",
 	"icon": "cooklang.png",
 	"engines": {
-		"vscode": "^1.75.0"
+		"vscode": "^1.91.0"
 	},
 	"categories": [
 		"Programming Languages"
@@ -85,13 +85,13 @@
 		"package": "vsce package"
 	},
 	"dependencies": {
-		"vscode-languageclient": "^9.0.1"
+		"vscode-languageclient": "^10.1.2"
 	},
 	"devDependencies": {
-		"@types/node": "^20.0.0",
-		"@types/vscode": "~1.75.0",
+		"@types/node": "^22.20.4",
+		"@types/vscode": "~1.91.0",
 		"esbuild": "^0.28.2",
-		"typescript": "^5.0.0",
-		"vsce": "^2.15.0"
+		"typescript": "~7.0.2",
+		"@vscode/vsce": "^4.0.0"
 	}
 }

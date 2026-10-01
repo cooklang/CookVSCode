@@ -9,7 +9,7 @@ import {
 } from 'vscode-languageclient/node';
 
 let client: LanguageClient;
-let outputChannel: vscode.OutputChannel;
+let outputChannel: vscode.LogOutputChannel;
 
 function getCommonCookPaths(): string[] {
     const home = os.homedir();
@@ -70,7 +70,7 @@ async function showCookNotFoundError(configuredPath: string): Promise<void> {
 }
 
 export async function activate(context: vscode.ExtensionContext) {
-    outputChannel = vscode.window.createOutputChannel('Cooklang');
+    outputChannel = vscode.window.createOutputChannel('Cooklang', { log: true });
     context.subscriptions.push(outputChannel);
 
     const config = vscode.workspace.getConfiguration('cooklang');

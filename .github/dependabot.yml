@@ -17,3 +17,11 @@ updates:
         update-types:
           - minor
           - patch
+    ignore:
+      # Keep @types/node aligned with the Node runtime of the extension host
+      # (VS Code / Electron ship Node 22). Bump manually with the host.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      # @types/vscode must not exceed engines.vscode (vsce package fails).
+      - dependency-name: "@types/vscode"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
