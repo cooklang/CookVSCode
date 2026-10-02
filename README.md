@@ -16,6 +16,8 @@ This extension requires the [`cook`](https://github.com/cooklang/cookcli) CLI to
 
 Install `cook` and ensure it's available in your PATH.
 
+To cook from the same files on your phone, sync the folder with [Cook Cloud sync](https://cook.md/).
+
 ## Installation
 
 ### Visual Studio Code
