@@ -88,7 +88,7 @@
 		"vscode-languageclient": "^10.1.2"
 	},
 	"devDependencies": {
-		"@types/node": "^22.20.4",
+		"@types/node": "^22.20.5",
 		"@types/vscode": "~1.91.0",
 		"esbuild": "^0.28.2",
 		"typescript": "~7.0.2",
