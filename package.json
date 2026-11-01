@@ -92,6 +92,6 @@
 		"@types/vscode": "~1.91.0",
 		"esbuild": "^0.28.2",
 		"typescript": "~7.0.2",
-		"@vscode/vsce": "^4.0.0"
+		"@vscode/vsce": "^4.1.0"
 	}
 }
